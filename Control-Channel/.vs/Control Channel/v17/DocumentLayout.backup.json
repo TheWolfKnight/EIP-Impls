@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\erikr\\source\\repos\\Control Channel\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8530B417-046F-4475-99AB-9265CC18C87C}|Control Channel\\Control Channel.csproj|c:\\users\\erikr\\source\\repos\\control channel\\control channel\\models\\controlenvelope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8530B417-046F-4475-99AB-9265CC18C87C}|Control Channel\\Control Channel.csproj|solutionrelative:control channel\\models\\controlenvelope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8530B417-046F-4475-99AB-9265CC18C87C}|Control Channel\\Control Channel.csproj|c:\\users\\erikr\\source\\repos\\control channel\\control channel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8530B417-046F-4475-99AB-9265CC18C87C}|Control Channel\\Control Channel.csproj|solutionrelative:control channel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8530B417-046F-4475-99AB-9265CC18C87C}|Control Channel\\Control Channel.csproj|c:\\users\\erikr\\source\\repos\\control channel\\control channel\\models\\destination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8530B417-046F-4475-99AB-9265CC18C87C}|Control Channel\\Control Channel.csproj|solutionrelative:control channel\\models\\destination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8530B417-046F-4475-99AB-9265CC18C87C}|Control Channel\\Control Channel.csproj|c:\\users\\erikr\\source\\repos\\control channel\\control channel\\control channel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8530B417-046F-4475-99AB-9265CC18C87C}|Control Channel\\Control Channel.csproj|solutionrelative:control channel\\control channel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ControlEnvelope.cs",
+              "DocumentMoniker": "C:\\Users\\erikr\\source\\repos\\Control Channel\\Control Channel\\Models\\ControlEnvelope.cs",
+              "RelativeDocumentMoniker": "Control Channel\\Models\\ControlEnvelope.cs",
+              "ToolTip": "C:\\Users\\erikr\\source\\repos\\Control Channel\\Control Channel\\Models\\ControlEnvelope.cs",
+              "RelativeToolTip": "Control Channel\\Models\\ControlEnvelope.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T08:42:07.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Destination.cs",
+              "DocumentMoniker": "C:\\Users\\erikr\\source\\repos\\Control Channel\\Control Channel\\Models\\Destination.cs",
+              "RelativeDocumentMoniker": "Control Channel\\Models\\Destination.cs",
+              "ToolTip": "C:\\Users\\erikr\\source\\repos\\Control Channel\\Control Channel\\Models\\Destination.cs",
+              "RelativeToolTip": "Control Channel\\Models\\Destination.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T08:41:13.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Control Channel",
+              "DocumentMoniker": "C:\\Users\\erikr\\source\\repos\\Control Channel\\Control Channel\\Control Channel.csproj",
+              "RelativeDocumentMoniker": "Control Channel\\Control Channel.csproj",
+              "ToolTip": "C:\\Users\\erikr\\source\\repos\\Control Channel\\Control Channel\\Control Channel.csproj",
+              "RelativeToolTip": "Control Channel\\Control Channel.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-01T08:40:15.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\erikr\\source\\repos\\Control Channel\\Control Channel\\Program.cs",
+              "RelativeDocumentMoniker": "Control Channel\\Program.cs",
+              "ToolTip": "C:\\Users\\erikr\\source\\repos\\Control Channel\\Control Channel\\Program.cs",
+              "RelativeToolTip": "Control Channel\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T08:30:08.679Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

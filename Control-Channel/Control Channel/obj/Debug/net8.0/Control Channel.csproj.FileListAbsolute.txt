@@ -1,0 +1,38 @@
+C:\Users\erikr\source\repos\Control Channel\Control Channel\bin\Debug\net8.0\Control Channel.exe
+C:\Users\erikr\source\repos\Control Channel\Control Channel\bin\Debug\net8.0\Control Channel.deps.json
+C:\Users\erikr\source\repos\Control Channel\Control Channel\bin\Debug\net8.0\Control Channel.runtimeconfig.json
+C:\Users\erikr\source\repos\Control Channel\Control Channel\bin\Debug\net8.0\Control Channel.dll
+C:\Users\erikr\source\repos\Control Channel\Control Channel\bin\Debug\net8.0\Control Channel.pdb
+C:\Users\erikr\source\repos\Control Channel\Control Channel\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Users\erikr\source\repos\Control Channel\Control Channel\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\erikr\source\repos\Control Channel\Control Channel\bin\Debug\net8.0\System.Threading.RateLimiting.dll
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\Control Channel.csproj.AssemblyReference.cache
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\Control Channel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\Control Channel.AssemblyInfoInputs.cache
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\Control Channel.AssemblyInfo.cs
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\Control Channel.csproj.CoreCompileInputs.cache
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\Control .61AECAEE.Up2Date
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\Control Channel.dll
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\refint\Control Channel.dll
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\Control Channel.pdb
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\Control Channel.genruntimeconfig.cache
+C:\Users\erikr\source\repos\Control Channel\Control Channel\obj\Debug\net8.0\ref\Control Channel.dll
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\bin\Debug\net8.0\Control Channel.exe
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\bin\Debug\net8.0\Control Channel.deps.json
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\bin\Debug\net8.0\Control Channel.runtimeconfig.json
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\bin\Debug\net8.0\Control Channel.dll
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\bin\Debug\net8.0\Control Channel.pdb
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\bin\Debug\net8.0\System.Threading.RateLimiting.dll
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\Control Channel.csproj.AssemblyReference.cache
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\Control Channel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\Control Channel.AssemblyInfoInputs.cache
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\Control Channel.AssemblyInfo.cs
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\Control Channel.csproj.CoreCompileInputs.cache
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\Control .61AECAEE.Up2Date
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\Control Channel.dll
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\refint\Control Channel.dll
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\Control Channel.pdb
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\Control Channel.genruntimeconfig.cache
+C:\Users\phili\Desktop\Dev\C#\EIP-Impls\Control-Channel\Control Channel\obj\Debug\net8.0\ref\Control Channel.dll
