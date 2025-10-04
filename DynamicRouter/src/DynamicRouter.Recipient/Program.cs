@@ -45,6 +45,7 @@ public class Program
 
       await controlCh.BasicAckAsync(ea.DeliveryTag, false);
 
+      Console.WriteLine($" [*] Working for {10 * message.Length} ms");
       Thread.Sleep(10 * message.Length);
       await DeclareUnitReadyAsync(controlCh, queue.QueueName, argv[0]);
     };
@@ -91,7 +92,7 @@ public class Program
     var body = Encoding.UTF8.GetBytes(message);
 
     await controlCh.BasicPublishAsync(string.Empty, routingKey: ControlQueue, body: body);
-    Console.WriteLine(" [*] Send connection");
+    Console.WriteLine(" [*] Send ready");
   }
 }
 

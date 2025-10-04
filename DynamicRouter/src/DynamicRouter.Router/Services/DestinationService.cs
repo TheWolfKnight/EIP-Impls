@@ -35,6 +35,7 @@ public class DestinationService : IDisposable
       var message = Encoding.UTF8.GetString(ea.Body.ToArray());
       Console.WriteLine(message);
       var destination = JsonSerializer.Deserialize<Destination>(message);
+      Console.WriteLine("Deseri done, Reg type is: " + destination?.RegType);
 
       if (destination is null)
       {
@@ -46,6 +47,7 @@ public class DestinationService : IDisposable
       if (destination.RegType is "Reg")
         RegisterNewDestination(destination);
       else if (destination.RegType is "Ready")
+        MarkDestinationReady(destination);
 
       await Task.CompletedTask;
       return;
@@ -71,6 +73,7 @@ public class DestinationService : IDisposable
 
   private void RegisterNewDestination(Destination destination)
   {
+    Console.WriteLine(" [*] Register with router");
     lock (_destinationLock)
     {
       if (!_destinations.ContainsKey(destination.SortKey))
@@ -90,9 +93,10 @@ public class DestinationService : IDisposable
 
   private void MarkDestinationReady(Destination destination)
   {
+    Console.WriteLine(" [*] Ready with router");
     lock (_destinationLock)
     {
-      if (_destinations.ContainsKey(destination.SortKey) || !_destinations[destination.SortKey].Any(dest => dest.DestinationId == destination.UnitId))
+      if (!_destinations.ContainsKey(destination.SortKey) || !_destinations[destination.SortKey].Any(dest => dest.DestinationId.ToString() == destination.UnitId.ToString()))
       {
         //TODO: Throw into invalid letter queue
         Console.WriteLine(" [WARN] Received ready from unkown destination");

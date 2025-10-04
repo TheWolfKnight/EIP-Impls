@@ -1,5 +1,4 @@
-﻿using DynamicRouter.Router.Models;
-using DynamicRouter.Router.Services;
+﻿using DynamicRouter.Router.Services;
 
 namespace DynamicRouter.Router;
 
@@ -13,6 +12,7 @@ public static class Program
     using var _chDest = await destinationService.StartDestinationGatheringAsync();
     using var _chRoute = await rabbit.StartRouterAsync();
 
+    Console.WriteLine(" [*] Router reader. Press any key to exit");
     Console.ReadKey();
   }
 }
