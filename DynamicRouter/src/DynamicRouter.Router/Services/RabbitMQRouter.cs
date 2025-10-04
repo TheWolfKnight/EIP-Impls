@@ -48,14 +48,23 @@ public class RabbitMQRouter : IDisposable
 
       var dests = _service.GetDestinations();
 
-      if (!dests.TryGetValue(sendTo, out var queue))
+      if (!dests.TryGetValue(sendTo, out var registerdDests))
       {
         // TODO: dead letter
         Console.WriteLine("Could not find destination");
         return;
       }
 
-      await channel.BasicPublishAsync(string.Empty, routingKey: queue.QueueName, body: ea.Body);
+      var dest = registerdDests.FirstOrDefault(dest => !dest.Working);
+      if (dest is null)
+      {
+        //TODO: check amt times send, send to dead letter if more than 5?
+        Console.WriteLine(" [WARN] Letter could not be routed within 5 tries, sending to dead letter");
+        return;
+      }
+
+      await channel.BasicPublishAsync(string.Empty, routingKey: dest.QueueName, body: ea.Body);
+      dest.Working = true;
     };
 
     await channel.BasicConsumeAsync("message-in", true, consumer: listner, cancellationToken: cancellationToken);

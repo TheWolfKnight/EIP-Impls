@@ -6,14 +6,14 @@ using RabbitMQ.Client.Events;
 
 namespace DynamicRouter.Router.Services;
 
-public class DestinationService: IDisposable
+public class DestinationService : IDisposable
 {
-  private readonly Dictionary<string, RegisterdDestination> _destinations = [];
+  private readonly Dictionary<string, IList<RegisterdDestination>> _destinations = [];
   private readonly object _destinationLock = new();
   private IConnection? _conn;
   private AsyncEventingBasicConsumer? _cons;
 
-  public async Task<IChannel> StartDestinationGatheringAsync(CancellationToken cancellationToken=default)
+  public async Task<IChannel> StartDestinationGatheringAsync(CancellationToken cancellationToken = default)
   {
     var connectionFactory = new ConnectionFactory
     {
@@ -43,15 +43,9 @@ public class DestinationService: IDisposable
         return;
       }
 
-      lock (_destinationLock)
-        _destinations.Add(
-          destination.SortKey,
-          new RegisterdDestination
-          {
-            QueueName = destination.QueueName,
-            Expiration = DateTime.Now.AddMinutes(30)
-          }
-        );
+      if (destination.RegType is "Reg")
+        RegisterNewDestination(destination);
+      else if (destination.RegType is "Ready")
 
       await Task.CompletedTask;
       return;
@@ -64,13 +58,49 @@ public class DestinationService: IDisposable
     return channel;
   }
 
-  public Dictionary<string, RegisterdDestination> GetDestinations()
+  public Dictionary<string, IList<RegisterdDestination>> GetDestinations()
   {
     lock (_destinationLock)
       return _destinations;
   }
 
-	public void Dispose() {
-        _conn?.Dispose();
-	}
+  public void Dispose()
+  {
+    _conn?.Dispose();
+  }
+
+  private void RegisterNewDestination(Destination destination)
+  {
+    lock (_destinationLock)
+    {
+      if (!_destinations.ContainsKey(destination.SortKey))
+        _destinations.Add(destination.SortKey, new List<RegisterdDestination>());
+
+      var registredDest = new RegisterdDestination
+      {
+        DestinationId = destination.UnitId,
+        QueueName = destination.QueueName,
+        Expiration = DateTime.Now.AddMinutes(30)
+      };
+
+
+      _destinations[destination.SortKey].Add(registredDest);
+    }
+  }
+
+  private void MarkDestinationReady(Destination destination)
+  {
+    lock (_destinationLock)
+    {
+      if (_destinations.ContainsKey(destination.SortKey) || !_destinations[destination.SortKey].Any(dest => dest.DestinationId == destination.UnitId))
+      {
+        //TODO: Throw into invalid letter queue
+        Console.WriteLine(" [WARN] Received ready from unkown destination");
+        return;
+      }
+
+      var dest = _destinations[destination.SortKey].First(dest => dest.DestinationId == destination.UnitId);
+      dest.Working = false;
+    }
+  }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phili\\Desktop\\Dev\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\DynamicRouter.Recipient.csproj": {}
+    "E:\\Programmering\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\DynamicRouter.Recipient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phili\\Desktop\\Dev\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\DynamicRouter.Recipient.csproj": {
+    "E:\\Programmering\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\DynamicRouter.Recipient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phili\\Desktop\\Dev\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\DynamicRouter.Recipient.csproj",
+        "projectUniqueName": "E:\\Programmering\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\DynamicRouter.Recipient.csproj",
         "projectName": "DynamicRouter.Recipient",
-        "projectPath": "C:\\Users\\phili\\Desktop\\Dev\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\DynamicRouter.Recipient.csproj",
-        "packagesPath": "C:\\Users\\phili\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phili\\Desktop\\Dev\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\obj\\",
+        "projectPath": "E:\\Programmering\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\DynamicRouter.Recipient.csproj",
+        "packagesPath": "C:\\Users\\sys_admin\\.nuget\\packages\\",
+        "outputPath": "E:\\Programmering\\C#\\EIP-Impls\\DynamicRouter\\src\\DynamicRouter.Recipient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\phili\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sys_admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

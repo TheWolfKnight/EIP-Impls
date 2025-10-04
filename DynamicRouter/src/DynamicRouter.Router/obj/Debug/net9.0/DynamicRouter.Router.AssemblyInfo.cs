@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DynamicRouter.Router")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f42c562bdba5fce2674baa246d7cb617d90a84fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("DynamicRouter.Router")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DynamicRouter.Router")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
