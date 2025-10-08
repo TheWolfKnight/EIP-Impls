@@ -13,9 +13,10 @@ public static class Program
 
   public static async Task Main(string[] argv)
   {
+    var rabbitLoc = Environment.GetEnvironmentVariable("RABBIT_ADDRESS", EnvironmentVariableTarget.Process) ?? "localhost";
     var connectionFactory = new ConnectionFactory()
     {
-      HostName = "localhost",
+      HostName = rabbitLoc,
       UserName = "user",
       Password = "password"
     };
@@ -25,21 +26,6 @@ public static class Program
 
     await channel.QueueDeclareAsync("aggregated.order", durable: false, exclusive: false, autoDelete: true);
     await channel.QueueDeclareAsync("aggregated.input", durable: false, exclusive: false, autoDelete: true);
-
-    //var props = new BasicProperties
-    //{
-    //  CorrelationId = "1",
-    //  Headers = new Dictionary<string, object?>
-    //  {
-    //    {"Final", "true"},
-    //    {"Sequence-Nr", 1}
-    //  }
-    //};
-
-    //var message = new Item{ ItemName = "test", ItemPrice = 1.2m};
-    //var body = JsonSerializer.Serialize(message);
-
-    //await channel.BasicPublishAsync(string.Empty, "aggregated.input", mandatory: false, basicProperties: props, body: Encoding.UTF8.GetBytes(body));
 
     var listner = new AsyncEventingBasicConsumer(channel);
 
@@ -113,7 +99,7 @@ public static class Program
 
     await channel.BasicConsumeAsync("aggregated.input", autoAck: false, consumer: listner);
 
-    Console.WriteLine(" [*] Aggregator running, press any key to exit");
-    Console.ReadKey();
+    Console.WriteLine(" [*] Aggregator running (press Ctrl-c to exit)");
+    await Task.Delay(-1);
   }
 }

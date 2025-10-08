@@ -7,9 +7,10 @@ public static class Program
 {
   public static async Task Main(string[] argv)
   {
+    var rabbitLoc = Environment.GetEnvironmentVariable("RABBIT_ADDRESS", EnvironmentVariableTarget.Process) ?? "localhost";
     var factory = new ConnectionFactory
     {
-      HostName = "localhost",
+      HostName = rabbitLoc,
       UserName = "user",
       Password = "password",
     };
@@ -45,7 +46,7 @@ public static class Program
 
     await ch.BasicConsumeAsync("contenttype.router.input", autoAck: false, consumer: listner);
 
-    Console.WriteLine(" [*] Content-Type router is running, press any key to stop");
-    Console.ReadKey();
+    Console.WriteLine(" [*] Content-Type router is running (Press Ctrl-c to exit)");
+    await Task.Delay(-1);
   }
 }

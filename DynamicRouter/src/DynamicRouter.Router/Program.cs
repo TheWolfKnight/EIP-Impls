@@ -12,7 +12,7 @@ public static class Program
     using var _chDest = await destinationService.StartDestinationGatheringAsync();
     using var _chRoute = await rabbit.StartRouterAsync();
 
-    Console.WriteLine(" [*] Router reader. Press any key to exit");
-    Console.ReadKey();
+    Console.WriteLine(" [*] Router reader (press Ctrl-c to exit)");
+    await Task.Delay(-1);
   }
 }

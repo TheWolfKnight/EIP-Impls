@@ -15,9 +15,10 @@ public class DestinationService : IDisposable
 
   public async Task<IChannel> StartDestinationGatheringAsync(CancellationToken cancellationToken = default)
   {
+    var rabbitLoc = Environment.GetEnvironmentVariable("RABBIT_ADDRESS", EnvironmentVariableTarget.Process) ?? "localhost";
     var connectionFactory = new ConnectionFactory
     {
-      HostName = "localhost",
+      HostName = rabbitLoc,
       UserName = "user",
       Password = "password"
     };

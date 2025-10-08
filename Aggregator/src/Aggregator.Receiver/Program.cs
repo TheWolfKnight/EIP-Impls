@@ -9,9 +9,10 @@ public static class Program
 {
   public static async Task Main(string[] argv)
   {
+    var rabbitLoc = Environment.GetEnvironmentVariable("RABBIT_ADDRESS", EnvironmentVariableTarget.Process) ?? "localhost";
     var connectionFactory = new ConnectionFactory()
     {
-      HostName = "localhost",
+      HostName = rabbitLoc,
       UserName = "user",
       Password = "password"
     };
@@ -44,8 +45,8 @@ public static class Program
 
     await channel.BasicConsumeAsync("aggregated.order", autoAck: false, consumer: listner);
 
-    Console.WriteLine(" [*] Receiver running, press any key to exit");
-    Console.ReadKey();
+    Console.WriteLine(" [*] Receiver running (press Ctrl-c to exit)");
+    await Task.Delay(-1);
   }
 }
 

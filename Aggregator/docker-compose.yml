@@ -1,0 +1,36 @@
+networks:
+  rabbit-connection:
+    driver: bridge
+
+services:
+  rabbit-mq:
+    image: rabbitmq:4-management
+    networks:
+      - rabbit-connection
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    ports:
+      - 5672:5672
+      - 8080:15672
+
+  aggregator:
+    build:
+      dockerfile: src/Aggregator.Aggregator/Dockerfile
+      no_cache: true
+    networks:
+      - rabbit-connection
+    depends_on:
+      - rabbit-mq
+    environment:
+      - RABBIT_ADDRESS=rabbit-mq
+    restart: unless-stopped
+
+  receiver:
+    build:
+      dockerfile: src/Aggregator.Receiver/Dockerfile
+      no_cache: true
+    networks:
+      - rabbit-connection
+    environment:
+      - RABBIT_ADDRESS=rabbit-mq

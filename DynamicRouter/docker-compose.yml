@@ -1,0 +1,40 @@
+networks:
+  rabbit-connection:
+    driver: bridge
+
+services:
+  rabbit-mq:
+    image: rabbitmq:4-management
+    networks:
+      - rabbit-connection
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    ports:
+      - 5672:5672
+      - 8080:15672
+
+  dynamic-router:
+    build:
+      dockerfile: src/DynamicRouter.Router/Dockerfile
+      no_cache: true
+    networks:
+      - rabbit-connection
+    environment:
+      - RABBIT_ADDRESS=rabbit-mq
+    depends_on:
+      - rabbit-mq
+    restart: unless-stopped
+
+  recipient-key-1:
+    build:
+      dockerfile: src/DynamicRouter.Recipient/Dockerfile
+      no_cache: true
+    networks:
+      - rabbit-connection
+    environment:
+      - RABBIT_ADDRESS=rabbit-mq
+      - SORT_KEY=key-1
+    depends_on:
+      - rabbit-mq
+    restart: unless-stopped

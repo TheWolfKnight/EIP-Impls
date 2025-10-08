@@ -20,9 +20,10 @@ public class RabbitMQRouter : IDisposable
 
 	public async Task<IChannel> StartRouterAsync(CancellationToken cancellationToken = default)
   {
+    var rabbitLoc = Environment.GetEnvironmentVariable("RABBIT_ADDRESS", EnvironmentVariableTarget.Process) ?? "localhost";
     var connectionFactory = new ConnectionFactory
     {
-      HostName = "localhost",
+      HostName = rabbitLoc,
       UserName = "user",
       Password = "password"
     };

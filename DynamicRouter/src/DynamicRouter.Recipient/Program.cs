@@ -8,7 +8,6 @@ namespace DynamicRouter.Recipient;
 
 public class Program
 {
-  private const string Host = "localhost";
   private const string User = "user";
   private const string Pass = "password";
 
@@ -21,12 +20,16 @@ public class Program
 
   public static async Task Main(string[] argv)
   {
-    if (argv.Length is not 1)
+    var sortKey = Environment.GetEnvironmentVariable("SORT_KEY", EnvironmentVariableTarget.Process);
+    if (sortKey is null && argv.Length is not 1)
       throw new InvalidOperationException("missing sort key");
+    else if (sortKey is null)
+      sortKey = argv[0];
 
+    var rabbitLoc = Environment.GetEnvironmentVariable("RABBIT_ADDRESS", EnvironmentVariableTarget.Process) ?? "localhost";
     var factory = new ConnectionFactory
     {
-      HostName = Host,
+      HostName = rabbitLoc,
       UserName = User,
       Password = Pass
     };
@@ -35,7 +38,7 @@ public class Program
     await using var controlCh = await conn.CreateChannelAsync();
 
     var queue = await controlCh.QueueDeclareAsync(durable: false, exclusive: false, autoDelete: true);
-    await RegisterWithRouterAsync(controlCh, queue.QueueName, argv[0]);
+    await RegisterWithRouterAsync(controlCh, queue.QueueName, sortKey);
 
     var ctrlConsumer = new AsyncEventingBasicConsumer(controlCh);
     ctrlConsumer.ReceivedAsync += async (_, ea) =>
@@ -47,12 +50,12 @@ public class Program
 
       Console.WriteLine($" [*] Working for {10 * message.Length} ms");
       Thread.Sleep(10 * message.Length);
-      await DeclareUnitReadyAsync(controlCh, queue.QueueName, argv[0]);
+      await DeclareUnitReadyAsync(controlCh, queue.QueueName, sortKey);
     };
 
     await controlCh.BasicConsumeAsync(queue.QueueName, autoAck: false, ctrlConsumer);
-    Console.WriteLine("[control] Control channel ready. Press any key to exit.");
-    Console.ReadKey();
+    Console.WriteLine("[control] Control channel ready. (press Ctrl-c to exit)");
+    await Task.Delay(-1);
   }
 
   private static async Task RegisterWithRouterAsync(IChannel controlCh, string queueName, string routeKey)
